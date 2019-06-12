@@ -1,0 +1,154 @@
+var count_obat = 1;
+var count_racikan = 1;
+var count_obat_racikan = 1;
+var count_cari_obat = 1;
+var no_r = 1;
+
+$('input.auto').autoNumeric('init');
+$(document).ready(function() {
+	$('.qty').numeric({allow:"."});
+	
+	//proses tambah dan kurangi item	
+    var wrapper         = $(".obat_wrap"); //Fields wrapper
+	var add_button      = $(".tambah_obat"); //Add button ID
+	
+	var wrapper_racikan         = $(".racikan_wrap"); //Fields wrapper
+	var add_racikan_button      = $(".tambah_racikan"); //Add button ID
+	
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+		count_obat = count_obat + 1;
+		count_cari_obat = count_cari_obat + 1;
+		$(wrapper).append(obat_append.replace(/_1/g,"_"+count_obat).replace("(1)","("+count_obat+")").replace(/count_cari_obat/g,count_cari_obat)); //add input box   replace(/blue/g, "red")
+		$('.qty').numeric({allow:"."});
+		$('input.auto').autoNumeric('init');
+    });
+	
+	$(add_racikan_button).click(function(e){ //on add input button click
+        e.preventDefault();
+		count_racikan = count_racikan + 1;
+		count_cari_obat = count_cari_obat + 1;
+		$(wrapper_racikan).append(racikan_append.replace(/_1/g,"_"+count_racikan).replace(/\(1\)/g,"("+count_racikan+")").replace(/\[1\]/g,"["+count_racikan+"]").replace(/count_cari_obat/g,count_cari_obat));
+		$('input.auto').autoNumeric('init');
+		$('.qty').numeric({allow:"."});
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').parent('div').remove();
+    })
+	
+	$(wrapper_racikan).on("click",".hapus_racikan", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').parent('div').remove();
+    })
+	
+});
+
+function tambah_obat_racik(x){
+	count_cari_obat = count_cari_obat + 1;
+	$("#racik_"+x).append(racikan_obat_append.replace(/_1/g,"_"+x).replace("(1)","("+x+")").replace(/\[1\]/g,"["+x+"]").replace(/_x/g,"_"+count_obat_racikan).replace("(x)","("+count_obat_racikan+")").replace(/count_cari_obat/g,count_cari_obat)); 
+	count_obat_racikan = count_obat_racikan + 1;
+	$('input.auto').autoNumeric('init');
+	$('.qty').numeric({allow:"."});
+}
+
+function hapus_obat_racikan(x){
+	$(".baris_"+x).remove();
+}
+
+function get_tipe_resep(){
+	var start_substr = 1; 
+	if($('#no_resep').val().length > 13)
+		start_substr = 2;
+	var tipe_resep = $('#no_resep').val().substr(start_substr, 2); 
+	return tipe_resep;
+}
+
+function select_autosuggest(obj,id,prefix){
+   $('.kode_obat_'+prefix+id).val(obj.kode);
+   $('.nama_obat_'+prefix+id).val(obj.namaKatalog);
+   $('.satuan_'+prefix+id).val(obj.satuan_besar);
+   $('.kode_satuan_'+prefix+id).val(obj.kodeSatuan);
+   $('.harga_kalkulasi_'+prefix+id).val(obj.harga_kalkulasi);
+   $('.diskon_'+prefix+id).val(obj.diskon);
+   $('.sel_qty_'+prefix+id).val(1);
+   calc_total();
+   return;
+}
+
+function cari_obat(id){
+	$('.nama_obat_'+id).typeahead({
+            source: function(typeahead, query) {
+               $.ajax({
+                  url: BASEURL+"/farmasi/master_katalog/typeahead_resep/",
+                  dataType: "json",
+                  type: "POST",
+                  data: {
+                      max_rows: max_rows_autosuggest,
+                      q: query,
+					  mr_no: $('#mr_no').val(),
+					  cara_bayar: $('#cara_bayar').val(),
+					  tipe_resep: get_tipe_resep()
+                  },
+                  success: function(data) {
+                      typeahead.process(display_return_typeahead(data));
+                  }
+               });
+            },
+			matcher: function () { return true; },
+            onselect: function(obj) {
+				select_autosuggest(obj,id,'');
+            },
+            items: max_rows_autosuggest
+         });
+}
+
+function display_return_typeahead(data){
+	var return_list = [], i = data.length;
+	  while (i--) {
+		  eval("var warna= formularium_"+data[i].formularium+".warna;");		  
+		  return_list[i] = {
+		  id: data[i].id, 
+		  value: '<font color='+warna+'>'+data[i].kode+ ' - ' + data[i].namaKatalog+' - '+data[i].harga_kalkulasi+'</font>',
+		  kode: data[i].kode,
+		  namaKatalog: data[i].namaKatalog,
+		  harga_kalkulasi: data[i].harga_kalkulasi,
+		  satuan_besar: data[i].satuan_besar,
+		  kodeSatuan: data[i].kodeSatuan,
+		  diskon: data[i].diskon};
+	  }
+	  
+	  return return_list;
+}
+
+function remove_item(id,nama_item){
+	if(confirm("Ingin Menghapus "+nama_item+" ?")){
+		$('#remove_id').val($('#remove_id').val() + '+'+id);
+		$(".item_"+id).remove();
+	}
+	return;
+}
+
+function calc_total(){
+	var sum = 0;
+	$('.harga').each(function(){
+		if (this.value != "")
+		sum += parseFloat(this.value);
+	});
+	console.log(sum);
+}
+
+function calculate_harga_item(id,parent){
+		parent = typeof parent !== 'undefined' ? parent : 'div';
+		
+		var qty = parseFloat($('.sel_qty_'+id).autoNumeric('get'));
+		var harga_satuan = parseFloat($('.sel_qty_'+id).parent().next(parent).next(parent).find('input').autoNumeric('get'));
+		harga = qty*harga_satuan;
+		if(isNaN(harga))
+			harga = 0;
+		$('.sel_qty_'+id).parent().next(parent).find('input').val(harga);
+		//calc_total();
+}
+
+function calculate_harga_item_racikan(id){
+		calculate_harga_item(id,'th');
+}

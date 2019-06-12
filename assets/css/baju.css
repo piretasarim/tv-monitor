@@ -1,0 +1,30 @@
+.toggle {
+      float: left;
+      cursor: pointer;
+      display: block;
+      padding:10px 16px;
+      border:1px solid #AECDEE;
+      text-decoration:none;
+      background-color: #FFF;
+      /*color:#FFF;*/
+      min-height:150px;
+      border-radius: 15px;
+}
+.toggle.active, .toggle:hover {
+    background: hsl(190, 75%, 40%);
+    /*background-color: #FFF;*/
+}
+
+.btn-round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #FFF;
+}
+
+.btn-round.btn-lg {
+    width: 128px;
+    height: 128px;
+    color: #2970BC; /*font*/
+}

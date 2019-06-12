@@ -1,0 +1,100 @@
+.thumbnail {
+  border-radius: 0;	
+}
+
+.alert {
+  border-radius: 0;	
+}
+header {
+  margin-bottom: 0;	
+}
+
+.page-header {
+  margin-top: 50px;
+}
+
+.navbar-inner {
+  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  /*
+  background-color: rgb(0,90,38);
+  background-image: -moz-linear-gradient(center top , rgb(24,24,166), rgb(63,112,207));
+  background-image: -ms-linear-gradient(top,#1818A6,#3E6FCE);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#1818A6),to(#3E6FCE));
+  background-image:-webkit-linear-gradient(top,#1818A6,#3E6FCE);
+  background-image:-o-linear-gradient(top,#1818A6,#3E6FCE);
+  background-image:linear-gradient(top,#1818A6,#3E6FCE);
+  background-repeat: repeat-x;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25), 0px -1px 0px rgba(0, 0, 0, 0.1) inset;
+  */
+ 
+}
+
+.navbar-fixed-bottom .navbar-inner {
+  background-image: -moz-linear-gradient(center top , rgb(24,24,166), rgb(63,112,207));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.1) inset;
+}
+
+.navbar .nav > li > a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar .nav > li:hover {
+  background: #555;
+}
+
+.thumbnail {
+  background-color: #FFF;
+}
+
+.thumbnail * {
+  color: #CC181E;
+}
+
+.table-jadwal td, .table-jadwal th {
+  background-color: #fff;  
+}
+
+.dataTable td, .dataTable th {
+  background-color: #fff;
+}
+
+.dataTables_paginate {
+  background-color: #fff;
+}
+
+#footer * {
+  text-align: center;
+  color: #fff;
+}
+
+#footer .centered {
+  padding-top: 7px;
+}
+
+.table-bordered caption + thead tr:first-child th, .table-bordered caption + tbody tr:first-child th,
+.table-bordered colgroup + thead tr:first-child th, .table-bordered colgroup + tbody tr:first-child th,
+.table-bordered thead:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child th {
+  background-color: #ffffff;
+}
+
+#masking
+{
+	background: transparent url(../img/line-dotted.png) left top repeat;
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index: -999;
+	padding:0;
+	margin:0;
+}
+
+.icon-jumbo {
+  font-size: 128px;	
+}
+#show_menu{
+	background-color:#31353E;
+}

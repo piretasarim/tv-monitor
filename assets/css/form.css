@@ -1,0 +1,75 @@
+/* everything about form put here */
+
+
+/* Print list pendek 
+ * source: hisys telkom! :P
+ */
+.print { padding: 10px; margin: 10px; /* page-break-after: always; */ }
+.print h1 { font-size: 1.4em; margin: 5px 0; margin-bottom: 10px; }
+.print h1 span { font-size: .55em; color: #999; }
+.print h1 div { font-size: .38em; float: right; padding: 0 5px; text-align: center; color: #999; }
+.print h1 div span { font-size: 3.5em; color: #333; padding: 0; margin: 0; text-align: center; }
+.print .signature { font: .75em Arial, Helvetica, sans-serif; color: #333; text-align: center; margin-top: 20px; margin-left: 60%; }
+
+.print table td h1 { font-size: 2em; margin: 5px 0; margin-bottom: 10px; }
+.print table td h1 span { font-size: .55em; color: #999; }
+.print table td h1 div { font-size: .38em; float: right; padding: 0 5px; text-align: center; color: #999; }
+.print table td h1 div span { font-size: 3.5em; color: #333; padding: 0; margin: 0; text-align: center; }
+
+.print table { color: #333; margin: 0 auto; padding: 0; font: .7em Arial, Helvetica, sans-serif; background: #fff; }
+.print table table { font-size: 1em; }
+.print table tbody { border: 1px solid #ccc; }
+.print table th { padding: 8px; background: #5A5A5A; color: #f1f1f1; font-weight: bold; border: 1px solid #ccc; }
+.print table td { padding: 8px; vertical-align: top; border-bottom: 1px solid #ccc; }
+.print table table td { padding: 4px 8px; }
+.print table.small-margin td { padding: 4px 6px; }
+.print table.twin td { border-right: 1px solid #ccc; }
+.print table.bordered td { border-right: 1px solid #ccc; }
+.print table.cleared { margin-top: 20px; }
+.print table.cleared tbody { border: none; }
+.print table.cleared td { border: none; }
+.print table td.bordered { border: 1px solid #ccc; }
+.print table td.cleared { border: none; padding: 0; }
+.print table td.labelborder { background: #f1f1f1; color: #333; font-weight: bold; border: 1px solid #ccc; }
+.print table td.group { color: #333; text-shadow: 1px 1px 0 #ccc; font-size: 1.2em; font-weight: bold; background: #D7D7D7; }
+.print table td.group em { font-weight: normal; }
+.print table td.name { font: 1.8em Georgia, "Times New Roman", Times, serif; text-transform: capitalize; }
+.print table td.label { background: #f1f1f1; color: #333; font-weight: bold; }
+.print table td.label.child { padding-left: 30px; }
+.print table td.label em { font-weight: normal; }
+.print table td span { display: block; font-weight: normal; font-style: italic; font-size: .85em; }
+.print table td.hinfo img { float: left; width: 85px; height: 75px; margin-right: 10px }
+.print table td.hinfo div.reg { float: right; width: 250px; }
+.print table td.hinfo div.hinfo h1 { padding: 2px 0; margin: 5px 0; border: none; }
+.print table td.hinfo div.hinfo span { display: block; }
+.print table td.level1 { padding-left: 25px; }
+.print table td.level2 { padding-left: 50px; }
+
+.print form { padding: 0; margin: 0; border: none; outline: none; background: none; }
+.print form table { color: #333; margin: 0 auto; padding: 0; font: .7em Arial, Helvetica, sans-serif; background: #fff; border: 1px solid #ccc; }
+.print form table table { font-size: 1em; }
+.print form table tbody { border: 1px solid #ccc; }
+.print form table th { padding: 8px; background: #5A5A5A; color: #f1f1f1; font-weight: bold; border: 1px solid #ccc; }
+.print form table td { padding: 8px; vertical-align: top; border-bottom: 1px solid #ccc; }
+.print form table table td { padding: 4px 8px; }
+.print form table.twin td { border-right: 1px solid #ccc; }
+.print form table.bordered td { border-right: 1px solid #ccc; }
+.print form table.cleared { margin-top: 20px; }
+.print form table.cleared tbody { border: none; }
+.print form table.cleared td { border: none; }
+.print form table td.group { color: #333; text-shadow: 1px 1px 0 #ccc; font-size: 1.2em; padding: 8px 5px; font-weight: bold; background: #D7D7D7; }
+.print form table td.group em { font-weight: normal; }
+.print form table td.name { font: 1.8em Georgia, "Times New Roman", Times, serif; text-transform: capitalize; }
+.print form table td.label { background: #f1f1f1; color: #333; font-weight: bold; }
+.print form table td.label.child { padding-left: 30px; }
+.print form table td.label em { font-weight: normal; }
+.print form table td span { display: block; font-weight: normal; font-style: italic; font-size: .85em; }
+.print form table td.hinfo img { float: left; width: 85px; height: 75px; margin-right: 10px }
+.print form table td.hinfo div.reg { float: right; width: 250px; }
+.print form table td.hinfo div.hinfo h1 { padding: 2px 0; margin: 5px 0; border: none; }
+.print form table td.hinfo div.hinfo span { display: block; }
+
+.print .generated { display: block; font-size: .7em; font-style: italic; padding: 10px 0; }
+
+/* Ending print list pendek */
+

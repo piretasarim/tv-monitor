@@ -1,0 +1,119 @@
+	/* 
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media 
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		.bootstrap-timepicker table,
+		.table-jadwal, .datepicker table {
+			display: table !important;
+		}
+		
+		.bootstrap-timepicker table thead,
+		.table-jadwal thead, .datepicker table thead {
+			display: table-header-group !important;
+		}
+		
+		.bootstrap-timepicker table tbody,
+		.table-jadwal tbody, .datepicker table tbody {
+			display: table-row-group !important;
+		}
+		
+		.bootstrap-timepicker table tr,
+		.table-jadwal tr, .datepicker table tr {
+			display: table-row !important;
+			border: none !important;
+		}
+		
+		.bootstrap-timepicker table td, .bootstrap-timepicker table th,
+		.datepicker table td, .datepicker table th,
+		.table-jadwal td, .table-jadwal th {
+			display: table-cell !important;
+		}
+		
+		.bootstrap-timepicker table td,
+		.table-jadwal td, .datepicker table td {
+			border-bottom: none !important;
+			padding: 8px !important;
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		.bootstrap-timepicker table tr,
+		.table-jadwal thead tr, .datepicker table thead tr {
+			position: relative !important;
+		}
+		
+		.bootstrap-timepicker table td:before,
+		.table-jadwal td:before, .datepicker table td:before {
+			display: none !important;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative !important;
+			padding-left: 30% !important; 
+			content: " ";
+			width: auto !important;
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 25%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+			font-weight:bold;
+		}
+		
+		td:after {
+		}
+		
+		/*
+		Label the data
+		*/
+		td:before { content: " "attr(data-label)""; }
+
+      th.action,
+      td.action {
+         text-align:left !important;
+      }
+      
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 320px; }
+		}
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body { 
+			width: 495px; 
+		}
+	}
