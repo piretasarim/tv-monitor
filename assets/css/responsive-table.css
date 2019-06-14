@@ -1,0 +1,90 @@
+.table{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.table .thead{
+	width: 100%;
+	border-bottom: 2px solid #eee;
+	overflow: auto;
+	zoom: 1; /*clearfix for IE6*/
+}
+
+.table .tbody .tr{
+	overflow: auto;
+	zoom: 1; /*clearfix for IE6*/
+}
+
+.table .tbody .tr:nth-of-type(odd) {
+	background-color: #999;
+}
+
+.table .thead .tr .th,
+.table .tbody .tr .td{
+	float: left;
+	text-align: left;
+	padding: 5px;
+}
+
+.table .tbody .tr{
+	border-top: 1px solid #eee;
+}
+.table .tbody .tr:first-child{
+	border-top: none;
+}
+
+
+/* one item */
+.table .thead .tr .th:first-child:nth-last-child(1),
+.table .tbody .tr .td:first-child:nth-last-child(1){
+  width: 100%;
+}
+
+/* two items */
+.table .thead .tr .th:first-child:nth-last-child(2),
+.table .tbody .tr .td:first-child:nth-last-child(2),
+.table .thead .tr .th:first-child:nth-last-child(2) ~.th,
+.table .tbody .tr .td:first-child:nth-last-child(2) ~.td{
+  width: 50%;
+}
+
+/* three items */
+.table .thead .tr .th:first-child:nth-last-child(3),
+.table .tbody .tr .td:first-child:nth-last-child(3),
+.table .thead .tr .th:first-child:nth-last-child(3) ~.th,
+.table .tbody .tr .td:first-child:nth-last-child(3) ~.td{
+  width: 33.3333%;
+}
+
+/* four items */
+.table .thead .tr .th:first-child:nth-last-child(4),
+.table .tbody .tr .td:first-child:nth-last-child(4),
+.table .thead .tr .th:first-child:nth-last-child(4) ~.th,
+.table .tbody .tr .td:first-child:nth-last-child(4) ~.td{
+  width: 25%;
+}
+
+/* five items */
+.table .thead .tr .th:first-child:nth-last-child(5),
+.table .tbody .tr .td:first-child:nth-last-child(5),
+.table .thead .tr .th:first-child:nth-last-child(5) ~.th,
+.table .tbody .tr .td:first-child:nth-last-child(5) ~.td{
+  width: 20%;
+}
+
+/* six items */
+.table .thead .tr .th:first-child:nth-last-child(6),
+.table .tbody .tr .td:first-child:nth-last-child(6),
+.table .thead .tr .th:first-child:nth-last-child(6) ~.th,
+.table .tbody .tr .td:first-child:nth-last-child(6) ~.td{
+  width: 16.6666%;
+}
+
+@media screen and (max-width: 480px){
+	.table .thead{
+		display: none;
+	}
+	.table .tbody .tr .td{
+		width: 100%!important;
+	}
+}

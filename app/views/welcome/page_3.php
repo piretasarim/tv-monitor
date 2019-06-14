@@ -1,4 +1,22 @@
+<style type="text/css">
+	.td,.th
+	{
+		width: 5em;
+        display: inline-block;
+        color: #FFF;
+	}
+    
+    tabel .thead .th .text-center { 
+        text-align:center,
+        float: left;
+	    padding: 9px;
+    }
 
+    tabel .thead .tr .text-center { 
+        background-color: #999;
+    }
+    
+</style>
 
 <div>
   <header class="app-bar fixed-top" data-role="appbar">
@@ -18,7 +36,7 @@
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 00-09</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -33,7 +51,17 @@
           </thead>
           <tbody>
           <tr>
-              <td>a</td>
+              <td>1</td>
+              <td>904184</td>
+              <td>CHAIRANI LUBIS	</td>
+              <td>Kardiologi (GP)	</td>
+              <td>dr. Yuyun </td>
+              <td>08:13:00</td>
+              <td>2</td>
+              <td>Daftar</td>
+          </tr>
+          <tr>
+          <td>2</td>
               <td>b</td>
               <td>c</td>
               <td>d</td>
@@ -43,7 +71,7 @@
               <td>h</td>
           </tr>
           <tr>
-          <td>a</td>
+          <td>3</td>
               <td>b</td>
               <td>c</td>
               <td>d</td>
@@ -53,7 +81,7 @@
               <td>h</td>
           </tr>
           <tr>
-          <td>a</td>
+          <td>4</td>
               <td>b</td>
               <td>c</td>
               <td>d</td>
@@ -63,27 +91,35 @@
               <td>h</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>5</td>
+              <td>1383283</td>
+              <td>HARRY ISKANDAR</td>
+              <td>Syaraf (GP)	</td>
+              <td>dr. Tan Yosephine, Sp.S	</td>
+              <td>07:07:00</td>
+              <td>12</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>6</td>
+              <td>2505286</td>
+              <td>ZULKARNAIN ZAUMAR	</td>
+              <td>Kardiologi (GP)	</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP	</td>
+              <td>07:35:00</td>
+              <td>4</td>
+              <td>Distribusi</td>
           </tr>
-          <tr>
-          <td>a</td>
+          <td>7</td>
+          <td>2504818</td>
+              <td>CHUSNUL CHOTIMAH	</td>
+              <td>Kardiologi (GP)	</td>
+              <td>dr. IRWIN TEDJA, Sp.PD	</td>
+              <td>08:07:00</td>
+              <td>3</td>
+              <td>Selesai</td>
+          </tr>
+          <td>8</td>
               <td>b</td>
               <td>c</td>
               <td>d</td>
@@ -97,7 +133,7 @@
       </div>
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 10-19</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -179,7 +215,7 @@
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 20-29</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -267,6 +303,9 @@
 
 <!-- LOAD OUR JS -->
 <?php $this->load->view('welcome/tvmonitor');?>
+
+<?= css_asset('responsive-table.css'); ?>
+<?= js_asset('responsive-table.js'); ?>
 
 <div class="footer">
 <footer class="container-fluid p-4">
