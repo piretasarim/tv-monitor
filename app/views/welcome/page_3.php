@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <style type="text/css">
 	.td,.th
 	{
@@ -19,8 +18,6 @@
     
 </style>
 
-=======
->>>>>>> parent of cfc2d66... black design
 <div>
   <header class="app-bar fixed-top" data-role="appbar">
     <div class="container">
