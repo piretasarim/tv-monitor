@@ -1,47 +1,47 @@
 <script type="text/javascript">
 
-$.fn.infiniteScrollUp=function(){
-		var self=this,kids=self.children()
-		kids.slice(20).hide()
-		self.height(self.height())
-		setInterval(function(){
-			kids.filter(':hidden').eq(0).slideDown()
-			kids.eq(0).slideUp(function(){
-				$(this).appendTo(self)
-				kids=self.children()
-			})
-		},1400)
-		return this
-	}
-	var mapping={
-		table:'section class="table"',
-		thead:'div class="thead"',
-		tbody:'div class="tbody"',
-		tr:'div class="tr"',
-		td:'div class="td"',
-		th:'div class="th text-center"'
-	}
-	var recode={}
-	recode.colgroup='<!'+'--'
-	recode['/colgroup']='-->'
-	$.each(mapping,function(i,v){
-		recode[i]='<'+v+'>'
-		recode['/'+i]='<\/'+v+'>'
-	})
-	function tableFixer(){
-		var t= this.outerHTML.replace(/<([^>]*)>/g,function(tag,nodeName){
-		//	console.log(tag,nodeName)
-			return recode[nodeName]||tag
-		})
-	//	console.log($(this).html(),t)
-		return '<div>'+t+'<\/div>'
-	}
-	$(function(){
-		$('table').replaceWith(tableFixer);
-		$('section').each(function(){
-			$(this).children().eq(1).infiniteScrollUp()
-		})
-	})
+// $.fn.infiniteScrollUp=function(){
+// 		var self=this,kids=self.children()
+// 		kids.slice(20).hide()
+// 		self.height(self.height())
+// 		setInterval(function(){
+// 			kids.filter(':hidden').eq(0).slideDown()
+// 			kids.eq(0).slideUp(function(){
+// 				$(this).appendTo(self)
+// 				kids=self.children()
+// 			})
+// 		},1400)
+// 		return this
+// 	}
+// 	var mapping={
+// 		table:'section class="table"',
+// 		thead:'div class="thead"',
+// 		tbody:'div class="tbody"',
+// 		tr:'div class="tr"',
+// 		td:'div class="td"',
+// 		th:'div class="th text-center"'
+// 	}
+// 	var recode={}
+// 	recode.colgroup='<!'+'--'
+// 	recode['/colgroup']='-->'
+// 	$.each(mapping,function(i,v){
+// 		recode[i]='<'+v+'>'
+// 		recode['/'+i]='<\/'+v+'>'
+// 	})
+// 	function tableFixer(){
+// 		var t= this.outerHTML.replace(/<([^>]*)>/g,function(tag,nodeName){
+// 		//	console.log(tag,nodeName)
+// 			return recode[nodeName]||tag
+// 		})
+// 	//	console.log($(this).html(),t)
+// 		return '<div>'+t+'<\/div>'
+// 	}
+// 	$(function(){
+// 		$('table').replaceWith(tableFixer);
+// 		$('section').each(function(){
+// 			$(this).children().eq(1).infiniteScrollUp()
+// 		})
+// 	})
 
 document.addEventListener("keydown", function(e) {
 	if (e.keyCode == 13) {
