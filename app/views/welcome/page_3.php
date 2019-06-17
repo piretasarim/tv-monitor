@@ -1,6 +1,92 @@
 
 
 <!-- TODO: https://jsfiddle.net/shailesh_sal/o0s2ugap/1/ -->
+<style>
+
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+    display: table-row;
+    color: #000;
+}
+.divTableHeading {
+	background-color: #000;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+
+.divTableRow:nth-child(even) {
+  background-color: #F2F2F2;
+}
+
+.divTableRow:nth-child(odd) {
+  color: #F2F2F2;
+}
+
+@media screen and (max-width: 600px) {
+
+    .divTable {
+      border: 0;
+    }
+
+    .divTableCell, .divTableHead {
+        border: 0px;
+    }
+    .divTableRow {
+        border: 1px solid #ddd;
+    }
+    .divTable > .divTableHeading {
+        display: none;
+    }
+
+    .divTable  .divTableRow {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .divTable .divTableCell {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        /*border:1px;*/
+        border-bottom: 1px dotted #CCC;
+    }
+
+    .divTable .divTableCell:last-child {
+        border-bottom: 0;
+    }
+
+    .divTable .divTableCell:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+
+    }
+}
+</style>
+
 <div>
   <header class="app-bar fixed-top" data-role="appbar">
     <div class="container">
@@ -19,7 +105,7 @@
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 00-09</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -34,71 +120,71 @@
           </thead>
           <tbody>
           <tr>
-              <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+              <td>1</td>
+              <td>2416887</td>
+              <td>SHERLY TANU WIJAYA</td>
+              <td>Bedah (GP)</td>
+              <td>dr. Sigit Daru Cahayadi, Sp.OT</td>
+              <td>06:22:00</td>
+              <td>1</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>2</td>
+              <td>2501932</td>
+              <td>ARIEF TEGUH SUTRISNO</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)</td>
+              <td>06:56:00</td>
+              <td>2</td>
+              <td>Distribusi</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>3</td>
+              <td>2504022</td>
+              <td>DINDIN ENDIYANI</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)	</td>
+              <td>06:57:00</td>
+              <td>3</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>4</td>
+              <td>2074165</td>
+              <td>LINA MEGAWATI TOBING</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>07:45:00</td>
+              <td>4</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>5</td>
+              <td>1415398</td>
+              <td>DEMINA SAGALA, NY	</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>08:30</td>
+              <td>5</td>
+              <td>Selesai Dokter</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>6</td>
+              <td>1399267</td>
+              <td>DEWANTARA ANANTO NUGROHO, An</td>
+              <td>Mata (GP)</td>
+              <td>dr. Andito Keshavamurthi Adisasmito, Sp.M	</td>
+              <td>08:25</td>
+              <td>6</td>
+              <td>Daftar</td>
           </tr>
           </tbody>
       </table>
       </div>
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 10-19</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -113,64 +199,64 @@
           </thead>
           <tbody>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+              <td>1</td>
+              <td>2416887</td>
+              <td>SHERLY TANU WIJAYA</td>
+              <td>Bedah (GP)</td>
+              <td>dr. Sigit Daru Cahayadi, Sp.OT</td>
+              <td>06:22:00</td>
+              <td>1</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>2</td>
+              <td>2501932</td>
+              <td>ARIEF TEGUH SUTRISNO</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)</td>
+              <td>06:56:00</td>
+              <td>2</td>
+              <td>Distribusi</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>3</td>
+              <td>2504022</td>
+              <td>DINDIN ENDIYANI</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)	</td>
+              <td>06:57:00</td>
+              <td>3</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>4</td>
+              <td>2074165</td>
+              <td>LINA MEGAWATI TOBING</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>07:45:00</td>
+              <td>4</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>5</td>
+              <td>1415398</td>
+              <td>DEMINA SAGALA, NY	</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>08:30</td>
+              <td>5</td>
+              <td>Selesai Dokter</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>6</td>
+              <td>1399267</td>
+              <td>DEWANTARA ANANTO NUGROHO, An</td>
+              <td>Mata (GP)</td>
+              <td>dr. Andito Keshavamurthi Adisasmito, Sp.M	</td>
+              <td>08:25</td>
+              <td>6</td>
+              <td>Daftar</td>
           </tr>
           </tbody>
       </table>
@@ -180,7 +266,7 @@
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 20-29</h5>
-      <table class="table border bordered hovered cell-hovered" id="main_table_demo">
+      <table>
           <thead>
           <tr>
               <th>No</th>
@@ -195,64 +281,64 @@
           </thead>
           <tbody>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+              <td>1</td>
+              <td>2416887</td>
+              <td>SHERLY TANU WIJAYA</td>
+              <td>Bedah (GP)</td>
+              <td>dr. Sigit Daru Cahayadi, Sp.OT</td>
+              <td>06:22:00</td>
+              <td>1</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>2</td>
+              <td>2501932</td>
+              <td>ARIEF TEGUH SUTRISNO</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)</td>
+              <td>06:56:00</td>
+              <td>2</td>
+              <td>Distribusi</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>3</td>
+              <td>2504022</td>
+              <td>DINDIN ENDIYANI</td>
+              <td>Paru (GP)</td>
+              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)	</td>
+              <td>06:57:00</td>
+              <td>3</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>4</td>
+              <td>2074165</td>
+              <td>LINA MEGAWATI TOBING</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>07:45:00</td>
+              <td>4</td>
+              <td>Daftar</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>5</td>
+              <td>1415398</td>
+              <td>DEMINA SAGALA, NY	</td>
+              <td>Kardiologi (GP)</td>
+              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
+              <td>08:30</td>
+              <td>5</td>
+              <td>Selesai Dokter</td>
           </tr>
           <tr>
-          <td>a</td>
-              <td>b</td>
-              <td>c</td>
-              <td>d</td>
-              <td>e</td>
-              <td>f</td>
-              <td>g</td>
-              <td>h</td>
+          <td>6</td>
+              <td>1399267</td>
+              <td>DEWANTARA ANANTO NUGROHO, An</td>
+              <td>Mata (GP)</td>
+              <td>dr. Andito Keshavamurthi Adisasmito, Sp.M	</td>
+              <td>08:25</td>
+              <td>6</td>
+              <td>Daftar</td>
           </tr>
           </tbody>
       </table>
