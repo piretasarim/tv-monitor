@@ -14,7 +14,7 @@
 </div>
 
 <div class="container page-content" style="width:100%; padding-top:35px;">
-  <div class="grid">
+  <div class="grid"> 
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 00-09</h5>
