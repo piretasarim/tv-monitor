@@ -87,6 +87,8 @@
 }
 </style>
 
+<?php dump($data); ?>
+
 <div>
   <header class="app-bar fixed-top" data-role="appbar">
     <div class="container">
@@ -119,66 +121,13 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-              <td>1</td>
-              <td>2416887</td>
-              <td>SHERLY TANU WIJAYA</td>
-              <td>Bedah (GP)</td>
-              <td>dr. Sigit Daru Cahayadi, Sp.OT</td>
-              <td>06:22:00</td>
-              <td>1</td>
-              <td>Daftar</td>
-          </tr>
-          <tr>
-          <td>2</td>
-              <td>2501932</td>
-              <td>ARIEF TEGUH SUTRISNO</td>
-              <td>Paru (GP)</td>
-              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)</td>
-              <td>06:56:00</td>
-              <td>2</td>
-              <td>Distribusi</td>
-          </tr>
-          <tr>
-          <td>3</td>
-              <td>2504022</td>
-              <td>DINDIN ENDIYANI</td>
-              <td>Paru (GP)</td>
-              <td>dr. Elisna Syahrudin, PhD, Sp.P(K)	</td>
-              <td>06:57:00</td>
-              <td>3</td>
-              <td>Daftar</td>
-          </tr>
-          <tr>
-          <td>4</td>
-              <td>2074165</td>
-              <td>LINA MEGAWATI TOBING</td>
-              <td>Kardiologi (GP)</td>
-              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
-              <td>07:45:00</td>
-              <td>4</td>
-              <td>Daftar</td>
-          </tr>
-          <tr>
-          <td>5</td>
-              <td>1415398</td>
-              <td>DEMINA SAGALA, NY	</td>
-              <td>Kardiologi (GP)</td>
-              <td>dr. R. Iwang Gumiwang, Sp.PD, Sp.JP</td>
-              <td>08:30</td>
-              <td>5</td>
-              <td>Selesai Dokter</td>
-          </tr>
-          <tr>
-          <td>6</td>
-              <td>1399267</td>
-              <td>DEWANTARA ANANTO NUGROHO, An</td>
-              <td>Mata (GP)</td>
-              <td>dr. Andito Keshavamurthi Adisasmito, Sp.M	</td>
-              <td>08:25</td>
-              <td>6</td>
-              <td>Daftar</td>
-          </tr>
+          <?php  
+            for ( $i=0; $i<10; $i++)
+                {  
+            ?>
+                <tr><td id="no_rm<?=$i?>"></td></tr>
+            
+            <?php } ?>
           </tbody>
       </table>
       </div>

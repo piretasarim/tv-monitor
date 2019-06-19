@@ -21,14 +21,14 @@ class Welcome extends CI_Controller {
 			'http_user'   => $this->config->item('http_user'),
 			'http_pass'   => $this->config->item('http_pass'),
 		);
-		$this->rest->initialize($config);
+		$this->rest->initialize($config); //dump($config);
 	}
 
 	// buat view data page 1
 	function page()
 	{
 		$view = "welcome/page";
-		$kueri = $this->rest->get('infobed_satu/format/json'); //exit(dump($data_bed));
+		$kueri = $this->rest->get('infobed_satu/format/json'); //exit(dump($kueri));
 		$bed['data'] = $kueri;
 		// render
 		show($view,$bed);
@@ -59,12 +59,17 @@ class Welcome extends CI_Controller {
 	function page_tiga()
 	{
 		$view = "welcome/page_3";
-		$kueri = $this->rest->get('infobed_dua/format/json'); //exit(dump($kueri));
-		$kuepi = $this->rest->get('infobed_pie_chart/format/json'); //exit(dump($kuepi));
-		$bed['data'] = $kueri;
-		$bed['kueh'] = $kuepi;
+		$kueri = $this->rest->get('showAll/0/format/json'); //dump($kueri);
+		$data['data'] = $kueri;
 		// render
-		show_2($view,$bed);
+		show_2($view,$data);
+	}
+
+	function data_tiga()
+	{
+		$kueri = $this->rest->get('showAll/0/format/json'); //exit(dump($kueri));
+		header('Content-Type: application/json; charset=utf-8' );
+		echo json_encode($kueri);
 	}
 
 	// buat ajax data 2

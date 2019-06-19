@@ -10,7 +10,7 @@ $.fn.infiniteScrollUp=function(){
 				$(this).appendTo(self)
 				kids=self.children()
 			})
-		},2000)
+		},5000)
 		return this
 	}
 	var mapping={
@@ -50,45 +50,6 @@ document.addEventListener("keydown", function(e) {
 }, false);
 
 
-function fungsi(x)
-{
-  if(x == 'off'){
-    $('#diam').val('1');
-    $('#on_span').show();
-    $('#off_span').hide();
-  }
-  else{
-    $('#diam').val('0');
-    $('#on_span').hide();
-    $('#off_span').show();
-  }
-}
-
-function toggleFullScreen() {
-  if (!document.fullscreenElement &&    // alternative standard method
-      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
-  	if (document.documentElement.requestFullscreen) {
-  		document.documentElement.requestFullscreen();
-  	} else if (document.documentElement.msRequestFullscreen) {
-  		document.documentElement.msRequestFullscreen();
-  	} else if (document.documentElement.mozRequestFullScreen) {
-  		document.documentElement.mozRequestFullScreen();
-  	} else if (document.documentElement.webkitRequestFullscreen) {
-  		document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-  	}
-  } else {
-  	if (document.exitFullscreen) {
-  		document.exitFullscreen();
-  	} else if (document.msExitFullscreen) {
-  		document.msExitFullscreen();
-  	} else if (document.mozCancelFullScreen) {
-  		document.mozCancelFullScreen();
-  	} else if (document.webkitExitFullscreen) {
-  		document.webkitExitFullscreen();
-  	}
-  }
-}
-
 function showTime()
 {
 	var m_names = new Array("Januari", "Februari", "Maret",
@@ -125,92 +86,26 @@ function reloading()
     location.reload();
 }
 
-function get_bed()
-{
-	var BASEURL = '<?= BASEURL?>';
+$(window).load(function(){
+	  // run every 7s
+	  setInterval('get_data()', 5000);
+});
 
-	$.get(BASEURL+"/index.php/welcome/data_bed/",  
+function get_data()
+{
+	var BASEURL = '<?= BASEURL?>'; 
+	$.get(BASEURL+"/index.php/welcome/data_tiga/",  
 	    function(data){
 
-	    	// console.log(data[0].jml_kamar_sk);
-	    	for(var i=0; i<15; i++) {
+	    	for(var i=0; i<30; i++) {
 
-	    		var isi_pasien_gabungan = parseInt(data[i].isi_inti) + parseInt(data[i].isi_cadangan);
-	    		// console.log(data[i].jml_kamar_sk);
-	    		var kapasitas = data[i].jml_kamar_sk;
+	    		var no_rm = data[i].no_rm;
 
-	    		if(isi_pasien_gabungan > kapasitas)
-	    			var terisi = kapasitas;
-	    		else
-	    			var terisi = isi_pasien_gabungan;
-		
-          var kosong_akum = parseInt(data[i].jml_kamar_sk) - parseInt(isi_pasien_gabungan);
-          if(kosong_akum < 0)
-          	var kosong = 0;
-          else
-          	var kosong = kosong_akum;
-
-	    		// console.log(data[i].jml_kamar_sk);
-	    		// var kapasitas = data[i].jml_kamar_sk;
-	    		// var terisi = data[i].isi_inti;
-	    		// var kosong = data[i].isi_kosong;
-	    		// console.log(kapasitas);
-	    		$('#kapasitas'+i).text(kapasitas).css("font-weight","Bold").attr('align', 'center');;
-	    		$('#terisi'+i).text(terisi).css("font-weight","Bold").css('color', '#3E630D').attr('align', 'center');;
-	    		$('#kosong'+i).text(kosong).css("font-weight","Bold").css('color', 'red').attr('align', 'center');;
+	    		$('#no_rm'+i).text(no_rm).css("font-weight","Bold").attr('align', 'center');
+	    		// $('#terisi'+i).text(terisi).css("font-weight","Bold").css('color', '#3E630D').attr('align', 'center');
+					// $('#kosong'+i).text(kosong).css("font-weight","Bold").css('color', 'red').attr('align', 'center');
+					
 	    	}
-
-	    	for(var j=15; j<28; j++) {
-
-	    		var isi_pasien_gabungan = parseInt(data[j].isi_inti) + parseInt(data[j].isi_cadangan);
-
-	    		var kapasitas = data[j].jml_kamar_sk;
-
-	    		if(isi_pasien_gabungan > kapasitas)
-	    			var terisi = kapasitas;
-	    		else
-	    			var terisi = isi_pasien_gabungan;
-
-	    		var kosong_akum = parseInt(data[j].jml_kamar_sk) - parseInt(isi_pasien_gabungan);
-          if(kosong_akum < 0)
-          	var kosong = 0;
-          else
-          	var kosong = kosong_akum;
-
-	    		// var kapasitas = data[j].jml_kamar_sk;
-	    		// var terisi = data[j].isi_inti;
-	    		// var kosong = data[j].isi_kosong;
-	    		// console.log(kapasitas);
-	    		$('#kapasitas'+j).text(kapasitas).css("font-weight","Bold").attr('align', 'center');;
-	    		$('#terisi'+j).text(terisi).css("font-weight","Bold").css('color', '#3E630D').attr('align', 'center');;
-	    		$('#kosong'+j).text(kosong).css("font-weight","Bold").css('color', 'red').attr('align', 'center');;
-	    	}
-
-	    	for(var k=28; k<48; k++) {
-
-	    		var isi_pasien_gabungan = parseInt(data[k].isi_inti) + parseInt(data[k].isi_cadangan);
-	    		var kapasitas = data[k].jml_kamar_sk;
-
-	    		if(isi_pasien_gabungan > kapasitas)
-	    			var terisi = kapasitas;
-	    		else
-	    			var terisi = isi_pasien_gabungan;
-
-	    		var kosong_akum = parseInt(data[k].jml_kamar_sk) - parseInt(isi_pasien_gabungan);
-          if(kosong_akum < 0)
-          	var kosong = 0;
-          else
-          	var kosong = kosong_akum;
-
-	    		// var kapasitas = data[k].jml_kamar_sk;
-	    		// var terisi = data[k].isi_inti;
-	    		// var kosong = data[k].isi_kosong;
-	    		// console.log(kapasitas);
-	    		$('#kapasitas'+k).text(kapasitas).css("font-weight","Bold").attr('align', 'center');;
-	    		$('#terisi'+k).text(terisi).css("font-weight","Bold").css('color', '#3E630D').attr('align', 'center');;
-	    		$('#kosong'+k).text(kosong).css("font-weight","Bold").css('color', 'red').attr('align', 'center');;
-	    	}
-
 	    }
 	);
 }
