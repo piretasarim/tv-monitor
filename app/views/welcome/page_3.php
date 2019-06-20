@@ -136,13 +136,16 @@
             ?>
                 <tr>
                     <td><?=$key+1?></td>
-                    <td id="no_rm<?=$key;?>"><?=$value->no_rm?></td>
-                    <td id="nama_pasien<?=$key;?>"><?=$value->nama_pasien?></td>
-                    <td id="nama_poli<?=$key;?>"><?=$value->nama_poli?></td>
-                    <td id="nama_dokter<?=$key;?>"><?=$value->nama_dokter?></td>
-                    <td id="jam_kunjungan<?=$key;?>"><?=$value->jam_kunjungan?></td>
-                    <td id="no_urut<?=$key;?>"><?=$value->no_urut?></td>
-                    <td id="status_berkas<?=$key;?>"><?=$value->status_berkas?></td>
+                    <td id="no_rm<?=$value->no_rm;?>"><?=$value->no_rm?></td>
+                    <td id="nama_pasien<?=$value->no_rm;?>"><?=$value->nama_pasien?></td>
+                    <td id="nama_poli<?=$value->no_rm;?>"><?=$value->nama_poli?></td>
+                    <td id="nama_dokter<?=$value->no_rm;?>"><?=$value->nama_dokter?></td>
+                    <td id="jam_kunjungan<?=$value->no_rm;?>"><?=$value->jam_kunjungan?></td>
+                    <td id="no_urut<?=$value->no_rm;?>"><?=$value->no_urut?></td>
+                    <td id="status_berkas<?=$value->no_rm;?>">
+                        <input type="hidden" id="status_berkas_warna<?=$value->no_rm;?>" value="<?=$value->kode_status_berkas;?>" />
+                        <?=$value->status_berkas?>
+                    </td>
                 </tr>
             <?php
                 }

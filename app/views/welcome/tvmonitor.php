@@ -110,10 +110,19 @@ function get_data()
 						// 	'6' : '#0027FF'						
 						// ];
 						
-						/*
-						switch (status_berkas) {
+						var nama_pasien = data[i]['nama_pasien'];
+						var no_rm = data[i]['no_rm'];
+						var nama_poli = data[i]['nama_poli'];
+						var nama_dokter = data[i]['nama_dokter'];
+						var jam_kunjungan = data[i]['jam_kunjungan'];
+						var no_urut = data[i]['no_urut'];
+						var status_berkas = data[i]['status_berkas'];
+
+						var status_berkas_warna = parseInt(data[i]['kode_status_berkas']);
+
+						switch (status_berkas_warna) {
 							case 1:
-								var warna = '#000000';
+								var warna = '#FFF';
 								break;
 							case 2:
 								var warna = '#FC0D00';
@@ -132,26 +141,20 @@ function get_data()
 								break;
 						
 							default:
-								var_warna = '#FFFFFF';
+								var_warna = '#FFF';
 								break;
 						}
-						*/
-						var nama_pasien = data[i]['nama_pasien'];
-						var no_rm = data[i]['no_rm'];
-						var nama_poli = data[i]['nama_poli'];
-						var nama_dokter = data[i]['nama_dokter'];
-						var jam_kunjungan = data[i]['jam_kunjungan'];
-						var no_urut = data[i]['no_urut'];
-						var status_berkas = data[i]['status_berkas'];
-					
-						$('#no_rm'+i).text(data[i]['no_rm']).css("font-weight","Bold").attr('align', 'center');
-					  $('#nama_pasien'+i).text(data[i]['nama_pasien']).css("font-weight","Bold").attr('align', 'center');
-					  $('#nama_poli'+i).text(data[i]['nama_poli']).css("font-weight","Bold").attr('align', 'center');
-					  $('#nama_dokter'+i).text(data[i]['nama_dokter']).css("font-weight","Bold").attr('align', 'center');
-					  $('#jam_kunjungan'+i).text(data[i]['jam_kunjungan']).css("font-weight","Bold").attr('align', 'center');
-					  $('#no_urut'+i).text(data[i]['no_urut']).css("font-weight","Bold").attr('align', 'center');
-					  $('#status_berkas'+i).text(data[i]['status_berkas']).css("font-weight","Bold").attr('align', 'center');
 						
+					
+						$('#no_rm'+no_rm).text(data[i]['no_rm']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+					  	$('#nama_pasien'+no_rm).text(data[i]['nama_pasien']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#nama_poli'+no_rm).text(data[i]['nama_poli']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#nama_dokter'+no_rm).text(data[i]['nama_dokter']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#jam_kunjungan'+no_rm).text(data[i]['jam_kunjungan']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#no_urut'+no_rm).text(data[i]['no_urut']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#status_berkas'+no_rm).text(data[i]['kode_status']).css("font-weight","Bold").attr('align', 'center').css('color',warna);
+						$('#status_berkas_warna'+no_rm).val(data[i]['kode_status_berkas']);
+
 
 				}
 
