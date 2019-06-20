@@ -67,9 +67,9 @@ class Welcome extends CI_Controller {
 
 	function data_tiga()
 	{
-		$kueri = $this->rest->get('showAll/0/format/json'); //exit(dump($kueri));
+		$data = $this->rest->get('showAll/0/format/json'); //exit(dump($kueri));
 		header('Content-Type: application/json; charset=utf-8' );
-		echo json_encode($kueri);
+		echo json_encode($data);
 	}
 
 	// buat ajax data 2

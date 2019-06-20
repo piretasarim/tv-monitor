@@ -4,7 +4,7 @@
 <style>
 
 /* DivTable.com */
-.divTable{
+/* .divTable{
 	display: table;
 	width: 100%;
 }
@@ -69,7 +69,7 @@
         display: block;
         text-align: right;
         font-size: 13px;
-        /*border:1px;*/
+        border:1px;
         border-bottom: 1px dotted #CCC;
     }
 
@@ -84,10 +84,20 @@
         font-weight: bold;
 
     }
+} */
+
+.table.striped tbody tr:nth-child(even) {
+    font-size: 10px;
 }
+
+.table.striped tbody tr:nth-child(odd) {
+    background: #aba0a0;
+    font-size: 12px;
+}
+
 </style>
 
-<?php dump($data); ?>
+<?php //dump($data); ?>
 
 <div>
   <header class="app-bar fixed-top" data-role="appbar">
@@ -107,7 +117,7 @@
   <div class="row cells12">
       <div class="cell colspan6 debug">
       <h5 class="judul">BLOK RAK 00-09</h5>
-      <table>
+      <table class="table border bordered hovered striped cell-hovered" id="main_table_demo">
           <thead>
           <tr>
               <th>No</th>
@@ -121,13 +131,22 @@
           </tr>
           </thead>
           <tbody>
-          <?php  
-            for ( $i=0; $i<10; $i++)
-                {  
+            <?php 
+                foreach ($data as $key => $value) {
             ?>
-                <tr><td id="no_rm<?=$i?>"></td></tr>
-            
-            <?php } ?>
+                <tr>
+                    <td><?=$key+1?></td>
+                    <td id="no_rm<?=$key;?>"><?=$value->no_rm?></td>
+                    <td id="nama_pasien<?=$key;?>"><?=$value->nama_pasien?></td>
+                    <td id="nama_poli<?=$key;?>"><?=$value->nama_poli?></td>
+                    <td id="nama_dokter<?=$key;?>"><?=$value->nama_dokter?></td>
+                    <td id="jam_kunjungan<?=$key;?>"><?=$value->jam_kunjungan?></td>
+                    <td id="no_urut<?=$key;?>"><?=$value->no_urut?></td>
+                    <td id="status_berkas<?=$key;?>"><?=$value->status_berkas?></td>
+                </tr>
+            <?php
+                }
+            ?>
           </tbody>
       </table>
       </div>
